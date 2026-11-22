@@ -57,18 +57,7 @@ The optimizer charges the battery during low-price midday solar peaks (and occas
 Evaluating incremental BESS NPV ($ Thousands) across turnkey battery cost trajectories ($140–$220/kWh) and cost of capital (6%–12% WACC):
 
 ![NPV Sensitivity Heatmap](assets/npv_sensitivity.png)
-## Visualizations
 
-### 1. Optimal Hourly Dispatch & Battery State of Charge (3-Day Summer Window)
-
-The optimizer absorbs low-priced midday solar peaks (and negative-price intervals) to charge the battery, then dispatches stored energy into high-priced evening ramps while strictly honoring power, SoC, and POI export limits.
-
-> \[!TIP\]
-> Running `python src/visualizer.py` also generates lightweight, CDN-backed interactive Plotly dashboards (`outputs/dispatch_profile.html` and `outputs/npv_sensitivity.html`) with zoom, pan, and unified hover tooltips.
-
-### 2. Financial Sensitivity Heatmap (Turnkey CapEx vs. WACC)
-
-Evaluates incremental BESS project NPV (`$ Thousands`) across battery CapEx trajectories (`$140–$220/kWh`) and Weighted Average Cost of Capital (`6%–12% WACC`), highlighting the exact break-even frontier for investment committees.
 
 ## System Architecture
 
