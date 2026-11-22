@@ -123,45 +123,32 @@ Where:
 ### Physical & Market Constraints
 
 1. **Solar PV Power Balance:**
-   
-
-   $$
+   ```math
    P_t^{\text{pv}\to\text{grid}} + P_t^{\text{pv}\to\text{bess}} + P_t^{\text{curt}} = P_t^{\text{pv,avail}} \quad \forall t
-   $$
+   ```
 
 2. **State of Charge (SoC) Dynamics:**
-   
-
-   $$
+   ```math
    E_t = E_{t-1} + \eta_c \left( P_t^{\text{pv}\to\text{bess}} + P_t^{\text{grid}\to\text{bess}} \right) \Delta t - \frac{1}{\eta_d} P_t^{\text{dis}} \Delta t \quad \forall t
-   $$
+   ```
 
 3. **SoC Operating Bounds:**
-   
-
-   $$
+   ```math
    E_{\min} \le E_t \le E_{\max} \quad \forall t
-   $$
+   ```
 
-4. **No Simultaneous Charge & Discharge (Binary Mutual Exclusion):**
-   Using binary operating-state variable $u_t \in \{0, 1\}$ ($u_t = 1$ when charging, $0$ when discharging):
-   
-
-   $$
+4. **No Simultaneous Charge & Discharge (Binary Mutual Exclusion):** Using binary operating-state variable $u_t \in \lbrace 0, 1 \rbrace$ ($u_t = 1$ when charging, $0$ when discharging):
+   ```math
    P_t^{\text{pv}\to\text{bess}} + P_t^{\text{grid}\to\text{bess}} \le P_{\max} \cdot u_t \quad \forall t
-   $$
-
-   $$
+   ```
+   ```math
    P_t^{\text{dis}} \le P_{\max} \cdot (1 - u_t) \quad \forall t
-   $$
+   ```
 
 5. **Shared Point of Interconnection (POI) Export Limit:**
-   
-
-   $$
+   ```math
    P_t^{\text{pv}\to\text{grid}} + P_t^{\text{dis}} \le P_{\text{grid,max}} \quad \forall t
-   $$
-
+   ```
 ## Quick Start
 
 ### 1. Clone & Set Up Environment
