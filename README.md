@@ -46,6 +46,17 @@ Baseline simulation for a **10 MW Solar PV** plant co-located with a **5 MW / 20
 | Investment Tax Credit (ITC) | `30%` | Applied to gross turnkey BESS CapEx | 
 | Rolling Optimization Horizon | `30 days` | Sequential MILP chunks with SoC continuity | 
 
+## Visual Outputs
+
+### Optimal Hourly Dispatch & State of Charge (3-Day Summer Sample)
+The optimizer charges the battery during low-price midday solar peaks (and occasional negative-price intervals) and discharges during high-price evening ramps while respecting power, SoC, and grid interconnection limits.
+
+![Optimal Dispatch Profile](assets/dispatch_profile.png)
+
+### Financial Sensitivity Analysis (CapEx vs. WACC)
+Evaluating incremental BESS NPV ($ Thousands) across turnkey battery cost trajectories ($140–$220/kWh) and cost of capital (6%–12% WACC):
+
+![NPV Sensitivity Heatmap](assets/npv_sensitivity.png)
 ## Visualizations
 
 ### 1. Optimal Hourly Dispatch & Battery State of Charge (3-Day Summer Window)
